@@ -2,5 +2,21 @@
  rPi docker project
 
 # Introduction
-Documenting my progress.
-docker-compose.yml for nginx w/certbot for wordpress and mariadb on arm32.
+Documenting my progress on the rPi home project.
+ARM32 rPi 2b+
+
+Docker
+-compose
+    nginx
+    certbot
+    linuxserver/mariadb
+    wordpress
+
+-run
+    influx 1.8
+    telegraf
+    grafana/grafana
+
+# To Do
+
+Create compose file and separate network for TICK stack, add grafana to nginx.
