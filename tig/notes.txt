@@ -1,0 +1,17 @@
+architecture:
+    tig
+        -grafana
+        -influxdb (mounted to /var/lib/influxdb)
+        -telegraf (telegraf.conf mounted to container)
+
+create initial telegraf.conf
+docker run --rm telegraf telegraf config | sudo tee telegraf.conf > /dev/null
+
+run telegraf container
+docker run -d --name=telegraf --net=container:influxdb -e HOST_PROC=/host/proc -v /proc:host/proc:ro -v $PWD/telegraf.conf:/etc/telegraf/telegraf.conf:ro telegraf
+
+run influxdb container
+docker run -d -p 8086:8086 -p 8083:8083 --name=influxdb -v $PWD:/var/lib/influxdb influxdb
+
+run grafana container
+docker run -d -p 3000:3000 --name=grafana grafana/grafana
