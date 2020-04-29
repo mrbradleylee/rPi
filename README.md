@@ -13,7 +13,7 @@ ARM32 rPi 2b+
     wordpress
 
 -run
-    influx 1.8
+    influxdb
     telegraf
     grafana/grafana
 
