@@ -5,7 +5,7 @@
 Documenting my progress on the rPi home project.
 ARM32 rPi 2b+
 
-Docker
+# Docker
 -compose
     nginx
     certbot
@@ -18,5 +18,4 @@ Docker
     grafana/grafana
 
 # To Do
-
 Create compose file and separate network for TICK stack, add grafana to nginx.
