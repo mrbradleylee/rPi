@@ -18,3 +18,7 @@ docker run -d -p 8086:8086 -p 8083:8083 --name=influxdb -v $PWD:/var/lib/influxd
 run grafana container
 cd /opt/tig/grafana
 docker run -d -p 3000:3000 --name=grafana grafana/grafana
+
+update running container after compose updates (eg wordpress version)
+docker-compose up -d --no-deps --build <service_name>
+must delete wordpress/web/index.php and wordpress/web/wp-includes/version.php
