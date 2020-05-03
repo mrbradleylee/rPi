@@ -16,7 +16,7 @@ wordpress_db:
 wordpress:
     links:
         - wordpress_db
-    image: wordpress:5.4.1-php7.2-fpm-alpine
+    image: wordpress:5.4.1-php7.4-fpm
     container_name: wordpress
     ports:
         - '9000:9000'
