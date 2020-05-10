@@ -5,4 +5,4 @@ DOCKER="/usr/bin/docker"
 
 cd /opt/wp-compose/
 $COMPOSE run certbot renew --dry-run && $COMPOSE kill -s SIGHUP nginx
-$DOCKER system prune -af
+$DOCKER container prune -f
