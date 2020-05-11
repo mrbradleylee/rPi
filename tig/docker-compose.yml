@@ -1,44 +1,44 @@
 version: "3"
 services:
-    influxdb:
-        image: influxdb
-        container_name: influxdb
-        ports:
-            - '8086:8086'
-            - '8083:8083'
-        volumes:
-            - $PWD/influxdb/data:/var/lib/influxdb
-            - $PWD/influxdb/config:/etc/influxdb
-        restart: unless-stopped
-        networks:
-            - moostache-net
+  influxdb:
+    image: influxdb
+    container_name: influxdb
+    ports:
+      - "8086:8086"
+      - "8083:8083"
+    volumes:
+      - $PWD/influxdb/data:/var/lib/influxdb
+      - $PWD/influxdb/config:/etc/influxdb
+    restart: unless-stopped
+    networks:
+      - moostache-net
 
-    telegraf:
-        image: telegraf
-        container_name: telegraf
-        volumes:
-            - /proc:/host/proc:ro
-            - $PWD/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
-            - /var/run/docker.sock:/var/run/docker.sock
-        environment:
-            - HOST_PROC=/host/proc
-        restart: unless-stopped
-        networks:
-            - moostache-net
+  telegraf:
+    image: telegraf
+    container_name: telegraf
+    volumes:
+      - /proc:/host/proc:ro
+      - $PWD/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - HOST_PROC=/host/proc
+    restart: unless-stopped
+    networks:
+      - moostache-net
 
-    grafana:
-        image: grafana/grafana:latest
-        container_name: grafana
-        user: '1000'
-        ports:
-            - '3000:3000'
-        volumes:
-            - $PWD/grafana/grafana.ini:/etc/grafana/grafana.ini
-            - $PWD/grafana/data:/var/lib/grafana
-        restart: unless-stopped
-        networks:
-            - moostache-net
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    user: "1000"
+    ports:
+      - "3000:3000"
+    volumes:
+      - $PWD/grafana/grafana.ini:/etc/grafana/grafana.ini
+      - $PWD/grafana/data:/var/lib/grafana
+    restart: unless-stopped
+    networks:
+      - moostache-net
 
 networks:
-    moostache-net:
-        external: true
+  moostache-net:
+    external: true
