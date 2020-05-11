@@ -18,8 +18,6 @@ services:
             - moostache-net
 
     wordpress:
-#        links:
-#            - wordpress_db
         image: wordpress:5.4.1-php7.4-fpm
         container_name: wordpress
         ports:
@@ -37,8 +35,6 @@ services:
             - moostache-net
 
     nginx:
-#        links:
-#            - wordpress
         image: nginx:latest
         container_name: nginx
         ports:
@@ -54,8 +50,6 @@ services:
             - moostache-net
 
     certbot:
-#     links:
-#            - nginx
         image: certbot/certbot:arm32v6-latest
         container_name: certbot
         volumes:
