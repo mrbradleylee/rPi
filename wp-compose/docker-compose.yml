@@ -57,7 +57,7 @@ services:
       - /opt/wp-compose/wordpress/web:/var/www/html
     networks:
       - moostache-net
-    command: certonly --webroot --webroot-path=/var/www/html --email bradley.j.lee@gmail.com --agree-tos --no-eff-email --staging -d moostache.info
+    command: certonly --webroot --webroot-path=/var/www/html --email admin@moostache.info --agree-tos --no-eff-email --staging -d moostache.info
 
 networks:
   moostache-net:
