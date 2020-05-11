@@ -67,11 +67,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "datasource": "${DS_INFLUXDB}",
       "format": "none",
       "gauge": {
@@ -126,9 +122,7 @@
         {
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             }
           ],
@@ -140,9 +134,7 @@
           "select": [
             [
               {
-                "params": [
-                  "n_containers_running"
-                ],
+                "params": ["n_containers_running"],
                 "type": "field"
               },
               {
@@ -178,11 +170,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
-      "colors": [
-        "#299c46",
-        "#629e51",
-        "#bf1b00"
-      ],
+      "colors": ["#299c46", "#629e51", "#bf1b00"],
       "datasource": "${DS_INFLUXDB}",
       "format": "none",
       "gauge": {
@@ -237,15 +225,11 @@
         {
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "none"
-              ],
+              "params": ["none"],
               "type": "fill"
             }
           ],
@@ -257,9 +241,7 @@
           "select": [
             [
               {
-                "params": [
-                  "n_containers_stopped"
-                ],
+                "params": ["n_containers_stopped"],
                 "type": "field"
               },
               {
@@ -294,11 +276,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
-      "colors": [
-        "#299c46",
-        "#e0752d",
-        "#bf1b00"
-      ],
+      "colors": ["#299c46", "#e0752d", "#bf1b00"],
       "datasource": "${DS_INFLUXDB}",
       "format": "none",
       "gauge": {
@@ -353,15 +331,11 @@
         {
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "none"
-              ],
+              "params": ["none"],
               "type": "fill"
             }
           ],
@@ -373,9 +347,7 @@
           "select": [
             [
               {
-                "params": [
-                  "n_images"
-                ],
+                "params": ["n_images"],
                 "type": "field"
               },
               {
@@ -467,9 +439,7 @@
         {
           "groupBy": [
             {
-              "params": [
-                "host"
-              ],
+              "params": ["host"],
               "type": "tag"
             }
           ],
@@ -481,9 +451,7 @@
           "select": [
             [
               {
-                "params": [
-                  "n_containers_running"
-                ],
+                "params": ["n_containers_running"],
                 "type": "field"
               },
               {
@@ -491,17 +459,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "running"
-                ],
+                "params": ["running"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "n_containers_paused"
-                ],
+                "params": ["n_containers_paused"],
                 "type": "field"
               },
               {
@@ -509,17 +473,13 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "paused"
-                ],
+                "params": ["paused"],
                 "type": "alias"
               }
             ],
             [
               {
-                "params": [
-                  "n_containers_stopped"
-                ],
+                "params": ["n_containers_stopped"],
                 "type": "field"
               },
               {
@@ -527,9 +487,7 @@
                 "type": "last"
               },
               {
-                "params": [
-                  "stopped"
-                ],
+                "params": ["stopped"],
                 "type": "alias"
               }
             ]
@@ -591,21 +549,15 @@
           "alias": "$tag_container_name",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "container_name"
-              ],
+              "params": ["container_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "none"
-              ],
+              "params": ["none"],
               "type": "fill"
             }
           ],
@@ -617,9 +569,7 @@
           "select": [
             [
               {
-                "params": [
-                  "usage_percent"
-                ],
+                "params": ["usage_percent"],
                 "type": "field"
               },
               {
@@ -743,9 +693,7 @@
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
-      "seriesOverrides": [
-        {}
-      ],
+      "seriesOverrides": [{}],
       "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
@@ -754,21 +702,15 @@
           "alias": "$tag_container_name",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "container_name"
-              ],
+              "params": ["container_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "none"
-              ],
+              "params": ["none"],
               "type": "fill"
             }
           ],
@@ -780,9 +722,7 @@
           "select": [
             [
               {
-                "params": [
-                  "usage_percent"
-                ],
+                "params": ["usage_percent"],
                 "type": "field"
               },
               {
@@ -920,21 +860,15 @@
           "alias": "$tag_container_name RX traffic",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "container_name"
-              ],
+              "params": ["container_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "none"
-              ],
+              "params": ["none"],
               "type": "fill"
             }
           ],
@@ -946,9 +880,7 @@
           "select": [
             [
               {
-                "params": [
-                  "rx_bytes"
-                ],
+                "params": ["rx_bytes"],
                 "type": "field"
               },
               {
@@ -975,21 +907,15 @@
           "alias": "$tag_container_name TX traffic",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "container_name"
-              ],
+              "params": ["container_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "none"
-              ],
+              "params": ["none"],
               "type": "fill"
             }
           ],
@@ -1001,9 +927,7 @@
           "select": [
             [
               {
-                "params": [
-                  "tx_bytes"
-                ],
+                "params": ["tx_bytes"],
                 "type": "field"
               },
               {
@@ -1124,21 +1048,15 @@
           "alias": "$tag_container_name IO_write",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "container_name"
-              ],
+              "params": ["container_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1150,9 +1068,7 @@
           "select": [
             [
               {
-                "params": [
-                  "io_service_bytes_recursive_write"
-                ],
+                "params": ["io_service_bytes_recursive_write"],
                 "type": "field"
               },
               {
@@ -1179,21 +1095,15 @@
           "alias": "$tag_container_name IO_read",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "container_name"
-              ],
+              "params": ["container_name"],
               "type": "tag"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1205,9 +1115,7 @@
           "select": [
             [
               {
-                "params": [
-                  "io_service_bytes_recursive_read"
-                ],
+                "params": ["io_service_bytes_recursive_read"],
                 "type": "field"
               },
               {
@@ -1344,17 +1252,7 @@
       "2h",
       "1d"
     ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
   },
   "timezone": "",
   "title": "Docker Dashboard",
