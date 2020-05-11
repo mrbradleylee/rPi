@@ -7,6 +7,8 @@ architecture:
 create initial telegraf.conf
 docker run --rm telegraf telegraf config | sudo tee telegraf.conf > /dev/null
 
+DEPRECATED RUN COMMANDS (run migrated to compose)
+
 run telegraf container
 cd /opt/tig/telagraf
 docker run -d --name=telegraf --net=container:influxdb -e HOST_PROC=/host/proc -v /proc:/host/proc:ro -v $PWD/telegraf.conf:/etc/telegraf/telegraf.conf:ro -v /var/run/docker.sock:/var/run/docker.sock telegraf
@@ -17,7 +19,9 @@ docker run -d -p 8086:8086 -p 8083:8083 --name=influxdb -v $PWD:/var/lib/influxd
 
 run grafana container
 cd /opt/tig/grafana
-docker run -d -p 3000:3000 --user 1000 --name=grafana --network=moostache-net -v $PWD/grafana.ini:/etc/grafana/grafana.ini:ro grafana/grafana
+docker run -d -p 3000:3000 --user 1000 --name=grafana --network=moostache-net -v $PWD/grafana.ini:/etc/grafana/grafana.ini:ro -v $PWD/data:/var/lib/grafana grafana/grafana
+
+GENERAL CONTAINER NOTES
 
 update running container after compose updates (eg wordpress version)
 docker-compose up -d --no-deps --build <service_name>
