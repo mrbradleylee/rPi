@@ -18,7 +18,7 @@ services:
       - moostache-net
 
   wordpress:
-    image: wordpress:5.4.1-php7.4-fpm
+    image: wordpress:php7.4-fpm
     container_name: wordpress
     ports:
       - "9000:9000"
