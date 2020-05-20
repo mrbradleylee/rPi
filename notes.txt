@@ -30,3 +30,7 @@ must delete wordpress/web/index.php and wordpress/web/wp-includes/version.php
 
 create network:
 docker network create --subnet 172.50.0.0/16 --gateway 172.50.0.1 moostache-net
+
+manage certbot renew cronjob:
+sudo crontab -e
+tail -f /var/log/cron.log

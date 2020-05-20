@@ -1,0 +1,30 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./nginx/logs:/var/log/nginx
+      - ./html:/var/www/html
+      - ./certbot:/etc/letsencrypt
+    restart: unless-stopped
+    networks:
+      - moostache-net
+
+  certbot:
+    image: certbot/certbot:arm32v6-latest
+    container_name: certbot
+    volumes:
+      - ./certbot:/etc/letsencrypt
+      - ./html:/var/www/html
+    networks:
+      - moostache-net
+    command: certonly --webroot --webroot-path=/var/www/html --email admin@moostache.info --agree-tos --no-eff-email --force-renewal -d moostache.info
+
+networks:
+  moostache-net:
+    external: true
