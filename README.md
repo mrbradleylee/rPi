@@ -6,7 +6,7 @@ Documenting my progress on the rPi home project.
 ARM32 rPi 2b+
 
 # Docker
--compose (wp-compose)
+-compose (wp-compose) **DEPRECATED**
     nginx
     certbot
     linuxserver/mariadb
@@ -16,6 +16,10 @@ ARM32 rPi 2b+
     telegraf
     influxdb
     grafana/grafana
+
+-compose (web)
+    nginx
+    certbot
 
 # To Do
 Validate /var/log/cron.log to make sure certbot is refreshing properly.  If so, remove dryrun from renewal
